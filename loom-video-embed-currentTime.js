@@ -5,7 +5,7 @@ jQuery('.embed-show-code-button').click();
 embed = jQuery('.embed-code').text();
 $embed = jQuery(embed);
 src = $embed.find('iframe').attr('src');
-$embed.find('iframe').attr('src', src+'?t='+player.currentTime);
+$embed.find('iframe').attr('src', src+'?t='+parseInt(player.currentTime));
 embedUpdate = $embed.prop('outerHTML');
 jQuery('.embed-code').text(embedUpdate);
 t=embedUpdate;d=document;d.body.appendChild(Object.assign(d.createElement('textarea'),{value:t})).select();d.execCommand('copy');
