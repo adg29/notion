@@ -1,1 +1,14 @@
-javascript:void%20function(e){var%20a=function(e){player=document.querySelector(%22.video-player-video%22),jQuery('header%20button:contains(%22Share%22)').click(),jQuery(%22.share-video-embed-code-dropdown-item%22).click(),jQuery(%22.embed-show-code-button%22).click(),embed=jQuery(%22.embed-code%22).text(),$embed=jQuery(embed),src=$embed.find(%22iframe%22).attr(%22src%22),$embed.find(%22iframe%22).attr(%22src%22,src+%22%3Ft=%22+parseInt(player.currentTime)),embedUpdate=$embed.prop(%22outerHTML%22),jQuery(%22.embed-code%22).text(embedUpdate),t=embedUpdate,d=document,d.body.appendChild(Object.assign(d.createElement(%22textarea%22),{value:t})).select(),d.execCommand(%22copy%22),e('[data-val=%22responsive%22].radio-label').click(),jQuery('header%20button:contains(%22Copy%20Code%22)').click()},r=e%26%26e.fn%26%26parseFloat(e.fn.jquery)%3E=1.7;if(r)a(e);else{var%20o=document.createElement(%22script%22);o.src=%22//ajax.googleapis.com/ajax/libs/jquery/1/jquery.js%22,o.onload=o.onreadystatechange=function(){var%20e=this.readyState;e%26%26%22loaded%22!==e%26%26%22complete%22!==e||a(jQuery.noConflict())}}document.getElementsByTagName(%22head%22)[0].appendChild(o)}(window.jQuery);
+player = document.querySelector('.video-player-video');
+jQuery('header button:contains("Share")').click();
+jQuery('.share-video-embed-code-dropdown-item').click();
+jQuery('.embed-show-code-button').click();
+embed = jQuery('.embed-code').text();
+$embed = jQuery(embed);
+src = $embed.find('iframe').attr('src');
+$embed.find('iframe').attr('src', src+'?t='+parseInt(player.currentTime));
+embedUpdate = $embed.prop('outerHTML');
+jQuery('.embed-code').text(embedUpdate);
+t=embedUpdate;d=document;d.body.appendChild(Object.assign(d.createElement('textarea'),{value:t})).select();d.execCommand('copy');
+$('[data-val="responsive"].radio-label').click()
+jQuery('header button:contains("Copy Code")').click();
+
