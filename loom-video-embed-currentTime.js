@@ -6,6 +6,9 @@ embed = jQuery('.embed-code').text();
 $embed = jQuery(embed);
 src = $embed.find('iframe').attr('src');
 $embed.find('iframe').attr('src', src+'?t='+player.currentTime);
-embedUpdate = $embed.text();
-embedUpdate = jQuery('.embed-code').text();
+embedUpdate = $embed.prop('outerHTML');
+jQuery('.embed-code').text(embedUpdate);
 t=embedUpdate;d=document;d.body.appendChild(Object.assign(d.createElement('textarea'),{value:t})).select();d.execCommand('copy');
+$('[data-val="responsive"].radio-label').click()
+jQuery('header button:contains("Copy Code")').click();
+
