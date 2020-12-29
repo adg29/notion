@@ -5,5 +5,5 @@ embed = $('.embed-code').text()
 $embed = $(embed)
 src = $embed.find('iframe').attr('src')
 $embed.find('iframe').attr('src',src+'?t='+player.currentTime)
-embedUPDATE = $('.embed-code').text()
+embedUpdate = $('.embed-code').text()
 t=embedUpdate;d=document;d.body.appendChild(Object.assign(d.createElement('textarea'),{value:t})).select();d.execCommand('copy');
